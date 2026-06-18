@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte Sustentável</title>
+    <title>Agro Sustentável</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -11,62 +11,34 @@
 
 <header>
     <h1>Agro Forte Sustentável</h1>
-    <p>Produção e Meio Ambiente em Equilíbrio</p>
+    <p>Educação e Sustentabilidade</p>
 
+    <!-- 🔧 ACESSIBILIDADE -->
     <div class="accessibility">
         <button onclick="toggleDark()">🌙 Modo</button>
-        <button onclick="increaseFont()">A+</button>
-        <button onclick="decreaseFont()">A-</button>
+        <button onclick="aumentarBrilho()">🔆 + Brilho</button>
+        <button onclick="diminuirBrilho()">🌘 - Brilho</button>
     </div>
 </header>
 
 <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#beneficios">Benefícios</a>
-    <a href="#grafico">Gráfico</a>
-    <a href="#jogo">Jogo</a>
-    <a href="#chat">Chat</a>
+    <a href="#quiz">Quiz</a>
 </nav>
 
-<section id="sobre">
-    <h2>O que é Agro Sustentável?</h2>
-    <p>
-        É um modelo de produção agrícola que preserva o solo, a água e a biodiversidade,
-        garantindo alimentos para o presente e o futuro.
-    </p>
-</section>
+<section id="quiz">
+    <h2>Quiz Sustentável 🌱</h2>
 
-<section id="beneficios">
-    <h2>Benefícios</h2>
+    <div id="quiz-container">
+        <p id="question"></p>
 
-    <div class="cards">
-        <div class="card">🌱 Solo fértil</div>
-        <div class="card">💧 Economia de água</div>
-        <div class="card">🍃 Menos poluição</div>
+        <div id="options"></div>
+
+        <p id="result"></p>
+
+        <button onclick="nextQuestion()">Próxima</button>
     </div>
-</section>
 
-<!-- 📊 GRÁFICO -->
-<section id="grafico">
-    <h2>Impacto Ambiental (Gráfico)</h2>
-    <canvas id="chart" width="300" height="200"></canvas>
-</section>
-
-<!-- 🎮 JOGO -->
-<section id="jogo">
-    <h2>Mini Jogo: Clique na planta 🌱</h2>
-    <button onclick="score()">🌱 CLICAR</button>
-    <p>Pontos: <span id="pontos">0</span></p>
-</section>
-
-<!-- 💬 CHAT -->
-<section id="chat">
-    <h2>Chat Educativo 🤖</h2>
-
-    <input type="text" id="userInput" placeholder="Pergunte algo...">
-    <button onclick="chat()">Enviar</button>
-
-    <p id="chatResposta"></p>
+    <h3>Pontos: <span id="score">0</span></h3>
 </section>
 
 <footer>
@@ -74,6 +46,5 @@
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
