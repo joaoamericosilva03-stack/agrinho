@@ -1,80 +1,61 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f9f4;
-    color: #333;
+    font-family: Arial;
+    margin: 0;
+    background: #f4f9f4;
+    transition: 0.3s;
 }
 
 header {
-    background: linear-gradient(to right, #2e7d32, #66bb6a);
+    background: green;
     color: white;
+    padding: 30px;
     text-align: center;
-    padding: 40px;
 }
 
 nav {
-    background-color: #1b5e20;
+    background: #1b5e20;
+    padding: 10px;
     text-align: center;
-    padding: 15px;
 }
 
 nav a {
     color: white;
+    margin: 10px;
     text-decoration: none;
-    margin: 15px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #c8e6c9;
 }
 
 section {
-    padding: 40px;
-}
-
-h2 {
-    color: #2e7d32;
-    margin-bottom: 15px;
+    padding: 30px;
 }
 
 .cards {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .card {
-    background-color: white;
-    padding: 20px;
+    background: white;
+    padding: 15px;
     border-radius: 10px;
     flex: 1;
-    min-width: 220px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-button {
-    background-color: #2e7d32;
-    color: white;
+/* acessibilidade */
+.accessibility button {
+    margin: 5px;
+    padding: 8px;
     border: none;
-    padding: 12px 20px;
-    margin-top: 20px;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #1b5e20;
+/* modo escuro */
+.dark {
+    background: #111;
+    color: white;
 }
 
-footer {
-    background-color: #1b5e20;
-    color: white;
-    text-align: center;
-    padding: 20px;
+/* chat */
+#chatResposta {
+    margin-top: 10px;
+    font-weight: bold;
 }
