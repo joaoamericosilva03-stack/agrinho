@@ -5,45 +5,18 @@ body {
     transition: 0.3s;
 }
 
+/* header */
 header {
     background: green;
     color: white;
-    padding: 30px;
     text-align: center;
-}
-
-nav {
-    background: #1b5e20;
-    padding: 10px;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    margin: 10px;
-    text-decoration: none;
-}
-
-section {
-    padding: 30px;
-}
-
-.cards {
-    display: flex;
-    gap: 10px;
-}
-
-.card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    flex: 1;
+    padding: 20px;
 }
 
 /* acessibilidade */
 .accessibility button {
     margin: 5px;
-    padding: 8px;
+    padding: 10px;
     border: none;
     cursor: pointer;
 }
@@ -54,8 +27,25 @@ section {
     color: white;
 }
 
-/* chat */
-#chatResposta {
-    margin-top: 10px;
-    font-weight: bold;
+/* brilho */
+body.bright {
+    filter: brightness(1.3);
+}
+
+body.dim {
+    filter: brightness(0.6);
+}
+
+/* quiz */
+#quiz-container {
+    padding: 20px;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
 }
