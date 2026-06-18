@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -6,79 +6,74 @@
     <title>Agro Forte Sustentável</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <header>
-        <h1>Agro Forte Sustentável</h1>
-        <p>Equilíbrio entre a Produção e o Meio Ambiente</p>
-    </header>
+<header>
+    <h1>Agro Forte Sustentável</h1>
+    <p>Produção e Meio Ambiente em Equilíbrio</p>
 
-    <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#beneficios">Benefícios</a>
-        <a href="#praticas">Práticas Sustentáveis</a>
-        <a href="#contato">Contato</a>
-    </nav>
+    <div class="accessibility">
+        <button onclick="toggleDark()">🌙 Modo</button>
+        <button onclick="increaseFont()">A+</button>
+        <button onclick="decreaseFont()">A-</button>
+    </div>
+</header>
 
-    <section id="sobre">
-        <h2>O que é Agro Sustentável?</h2>
-        <p>
-            A agricultura sustentável busca aumentar a produção de alimentos
-            sem prejudicar os recursos naturais. Ela utiliza técnicas que
-            preservam o solo, a água e a biodiversidade, garantindo alimentos
-            para as gerações atuais e futuras.
-        </p>
-    </section>
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#beneficios">Benefícios</a>
+    <a href="#grafico">Gráfico</a>
+    <a href="#jogo">Jogo</a>
+    <a href="#chat">Chat</a>
+</nav>
 
-    <section id="beneficios">
-        <h2>Benefícios</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Proteção do Solo</h3>
-                <p>Reduz a erosão e mantém a fertilidade da terra.</p>
-            </div>
+<section id="sobre">
+    <h2>O que é Agro Sustentável?</h2>
+    <p>
+        É um modelo de produção agrícola que preserva o solo, a água e a biodiversidade,
+        garantindo alimentos para o presente e o futuro.
+    </p>
+</section>
 
-            <div class="card">
-                <h3>Economia de Água</h3>
-                <p>Utiliza sistemas de irrigação mais eficientes.</p>
-            </div>
+<section id="beneficios">
+    <h2>Benefícios</h2>
 
-            <div class="card">
-                <h3>Produção Responsável</h3>
-                <p>Garante alimentos de qualidade com menor impacto ambiental.</p>
-            </div>
-        </div>
-    </section>
+    <div class="cards">
+        <div class="card">🌱 Solo fértil</div>
+        <div class="card">💧 Economia de água</div>
+        <div class="card">🍃 Menos poluição</div>
+    </div>
+</section>
 
-    <section id="praticas">
-        <h2>Práticas Sustentáveis</h2>
-        <ul>
-            <li>Rotação de culturas</li>
-            <li>Plantio direto</li>
-            <li>Uso racional da água</li>
-            <li>Controle biológico de pragas</li>
-            <li>Preservação das matas ciliares</li>
-        </ul>
+<!-- 📊 GRÁFICO -->
+<section id="grafico">
+    <h2>Impacto Ambiental (Gráfico)</h2>
+    <canvas id="chart" width="300" height="200"></canvas>
+</section>
 
-        <button onclick="mostrarMensagem()">
-            Saiba Mais
-        </button>
-    </section>
+<!-- 🎮 JOGO -->
+<section id="jogo">
+    <h2>Mini Jogo: Clique na planta 🌱</h2>
+    <button onclick="score()">🌱 CLICAR</button>
+    <p>Pontos: <span id="pontos">0</span></p>
+</section>
 
-    <section id="contato">
-        <h2>Importância para o Futuro</h2>
-        <p>
-            O agro sustentável é fundamental para garantir a produção de alimentos
-            e a conservação ambiental, promovendo desenvolvimento econômico e
-            qualidade de vida.
-        </p>
-    </section>
+<!-- 💬 CHAT -->
+<section id="chat">
+    <h2>Chat Educativo 🤖</h2>
 
-    <footer>
-        <p>Projeto Escolar - Agro Forte Sustentável © 2025</p>
-    </footer>
+    <input type="text" id="userInput" placeholder="Pergunte algo...">
+    <button onclick="chat()">Enviar</button>
 
-    <script src="script.js"></script>
+    <p id="chatResposta"></p>
+</section>
+
+<footer>
+    <p>Projeto Escolar © 2026</p>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
