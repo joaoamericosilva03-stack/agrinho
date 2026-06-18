@@ -1,58 +1,111 @@
-let fontSize = 16;
-let pontos = 0;
+let score = 0;
+let index = 0;
 
 /* 🌙 modo escuro */
 function toggleDark() {
     document.body.classList.toggle("dark");
 }
 
-/* 🔠 fonte */
-function increaseFont() {
-    fontSize += 2;
-    document.body.style.fontSize = fontSize + "px";
+/* 🔆 brilho */
+function aumentarBrilho() {
+    document.body.classList.remove("dim");
+    document.body.classList.add("bright");
 }
 
-function decreaseFont() {
-    fontSize -= 2;
-    document.body.style.fontSize = fontSize + "px";
+function diminuirBrilho() {
+    document.body.classList.remove("bright");
+    document.body.classList.add("dim");
 }
 
-/* 🎮 jogo */
-function score() {
-    pontos++;
-    document.getElementById("pontos").innerText = pontos;
-}
-
-/* 💬 chat simples */
-function chat() {
-    let msg = document.getElementById("userInput").value.toLowerCase();
-    let resposta = "";
-
-    if (msg.includes("o que é")) {
-        resposta = "É uma forma sustentável de produzir alimentos.";
-    } 
-    else if (msg.includes("benefício")) {
-        resposta = "Protege o solo, água e aumenta qualidade dos alimentos.";
+/* 🧠 QUIZ (10 perguntas estilo Quizizz) */
+const questions = [
+    {
+        q: "O que é agro sustentável?",
+        options: ["Desmatamento", "Produção com preservação", "Mineração", "Poluição"],
+        answer: 1
+    },
+    {
+        q: "Qual recurso deve ser preservado?",
+        options: ["Plástico", "Água", "Gasolina", "Fogo"],
+        answer: 1
+    },
+    {
+        q: "O plantio direto ajuda em:",
+        options: ["Erosão do solo", "Preservação do solo", "Poluição", "Desmatamento"],
+        answer: 1
+    },
+    {
+        q: "Qual é um benefício do agro sustentável?",
+        options: ["Mais poluição", "Menos alimentos", "Solo saudável", "Desperdício"],
+        answer: 2
+    },
+    {
+        q: "O controle biológico usa:",
+        options: ["Agrotóxicos fortes", "Insetos naturais", "Plástico", "Fogo"],
+        answer: 1
+    },
+    {
+        q: "Agricultura sustentável ajuda:",
+        options: ["Destruir rios", "Preservar o meio ambiente", "Poluir o ar", "Acabar com plantas"],
+        answer: 1
+    },
+    {
+        q: "O que evita erosão?",
+        options: ["Desmatamento", "Cobertura vegetal", "Queimada", "Lixo"],
+        answer: 1
+    },
+    {
+        q: "Rotação de culturas serve para:",
+        options: ["Cansar o solo", "Melhorar o solo", "Poluir", "Secar rios"],
+        answer: 1
+    },
+    {
+        q: "Agro sustentável usa:",
+        options: ["Tecnologia e natureza", "Apenas fogo", "Apenas máquinas poluentes", "Nada"],
+        answer: 0
+    },
+    {
+        q: "O objetivo principal é:",
+        options: ["Destruir natureza", "Produzir sem prejudicar o futuro", "Poluir rios", "Acabar com florestas"],
+        answer: 1
     }
-    else if (msg.includes("água")) {
-        resposta = "Ajuda a economizar água com irrigação eficiente.";
-    }
-    else {
-        resposta = "Não entendi, tente perguntar sobre agricultura sustentável.";
+];
+
+function loadQuestion() {
+    if (index >= questions.length) {
+        document.getElementById("question").innerText = "Quiz finalizado!";
+        document.getElementById("options").innerHTML = "";
+        return;
     }
 
-    document.getElementById("chatResposta").innerText = resposta;
+    let q = questions[index];
+
+    document.getElementById("question").innerText = q.q;
+
+    let optionsHTML = "";
+
+    q.options.forEach((opt, i) => {
+        optionsHTML += `<button onclick="checkAnswer(${i})">${opt}</button>`;
+    });
+
+    document.getElementById("options").innerHTML = optionsHTML;
 }
 
-/* 📊 gráfico simples */
-const canvas = document.getElementById("chart");
-const ctx = canvas.getContext("2d");
+function checkAnswer(i) {
+    if (i === questions[index].answer) {
+        score++;
+        document.getElementById("score").innerText = score;
+        document.getElementById("result").innerText = "✔ Correto!";
+    } else {
+        document.getElementById("result").innerText = "❌ Errado!";
+    }
+}
 
-ctx.fillStyle = "green";
-ctx.fillRect(20, 50, 50, 100);
+function nextQuestion() {
+    index++;
+    document.getElementById("result").innerText = "";
+    loadQuestion();
+}
 
-ctx.fillStyle = "blue";
-ctx.fillRect(100, 80, 50, 70);
-
-ctx.fillStyle = "red";
-ctx.fillRect(180, 30, 50, 120);
+/* iniciar quiz */
+loadQuestion();
